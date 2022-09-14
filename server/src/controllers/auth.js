@@ -45,9 +45,13 @@ const signin = async (req, res) => {
       throw new Error("signin: User authentication failed");
     }
 
-    const token = await jwt.sign({ _id: user._id }, process.env.JWT_SECRET, {
-      expiresIn: "1h",
-    });
+    const token = await jwt.sign(
+      { _id: user._id, role: user.role },
+      process.env.JWT_SECRET,
+      {
+        expiresIn: "1h",
+      }
+    );
 
     const { _id, firstName, lastName, email, role, fullName } = user;
 
