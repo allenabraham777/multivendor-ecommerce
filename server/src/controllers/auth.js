@@ -51,12 +51,10 @@ const signin = async (req, res) => {
 
     const { _id, firstName, lastName, email, role, fullName } = user;
 
-    res
-      .status(200)
-      .json({
-        token,
-        user: { _id, firstName, lastName, email, role, fullName },
-      });
+    res.status(200).json({
+      token,
+      user: { _id, firstName, lastName, email, role, fullName },
+    });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Something went wrong!!!" });
