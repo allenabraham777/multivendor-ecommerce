@@ -9,6 +9,9 @@ const createCategory = async (req, res) => {
       name,
       slug: slugify(name),
     };
+    if (req.file) {
+      categoryObj.categoryImage = req.file.filename;
+    }
     if (parentId) {
       categoryObj.parentId = parentId;
     }

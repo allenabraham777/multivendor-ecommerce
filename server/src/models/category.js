@@ -15,7 +15,7 @@ const categorySchema = new mongoose.Schema(
     // type: {
     //   type: String,
     // },
-    // categoryImage: { type: String },
+    categoryImage: { type: String },
     parentId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Category",
