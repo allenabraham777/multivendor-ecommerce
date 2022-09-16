@@ -29,4 +29,4 @@ const isAdmin = async (req, res, next) => {
   next();
 };
 
-export { isLoggedIn, isAdmin };
+export { isLoggedIn, isAdmin, isUser };
